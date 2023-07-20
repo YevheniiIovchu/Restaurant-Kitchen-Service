@@ -9,9 +9,9 @@
     </a>
   </h1>
 
-{#  {% block search %}#}
-{#    {% include "includes/search.html" %}#}
-{#  {% endblock %}#}
+  {% block search %}
+    {% include "includes/search.html" %}
+  {% endblock %}
 
   {% if dish_list %}
     <table class="table">
@@ -26,7 +26,7 @@
       {% for dish in dish_list %}
         <tr>
           <td>
-            {{ dish.id }}
+            <a href="{% url "restaurant:dish-detail" pk=dish.id %} ">{{ dish.id }}</a>
           </td>
           <td>
             {{ dish.name }}
@@ -38,13 +38,13 @@
             {{ dish.dish_type.name }}
           </td>
           <td>
-            <a href="{% url 'restaurant:dish-update' pk=dish_type.id %}">
+            <a href="{% url 'restaurant:dish-update' pk=dish.id %}">
               Update
             </a>
           </td>
           <td>
             <a style="color: red"
-              href="{% url 'restaurant:dish-delete' pk=dish_type.id %}">
+              href="{% url 'restaurant:dish-delete' pk=dish.id %}">
               Delete
             </a>
           </td>

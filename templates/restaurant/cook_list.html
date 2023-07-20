@@ -9,9 +9,9 @@
       </a>
     </h1>
 
-{#  {% block search %}#}
-{#    {% include "includes/search.html" %}#}
-{#  {% endblock %}#}
+  {% block search %}
+    {% include "includes/search.html" %}
+  {% endblock %}
 
     {% if cook_list %}
     <table class="table">
@@ -25,7 +25,7 @@
     {% for cook in cook_list %}
       <tr>
         <td>{{ cook.id }}</td>
-        <td>{{ cook.username }} </td>
+        <td><a href="{{ cook.get_absolute_url }}">{{ cook.username }} </a></td>
         <td>{{ cook.first_name }}</td>
         <td>{{ cook.last_name }}</td>
         <td>{{ cook.years_of_experience }}</td>

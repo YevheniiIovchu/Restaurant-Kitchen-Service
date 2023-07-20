@@ -11,14 +11,19 @@
       Update
     </a>
   </h1>
-  <p>Dish type: ({{ dish.dish_type.name }})</p>
+  <hr>
+  <p><strong>Dish type:</strong> {{ dish.dish_type.name }}</p>
+  <p><strong>Description:</strong> {{ dish.description }}</p>
+  <p><strong>Price:</strong> {{ dish.price }}</p>
+  <hr>
   <h1>
     Cooks
   </h1>
-  <hr>
   <ul>
     {% for cook in dish.cooks.all %}
+      <hr>
       <li>{{ cook.username }} ({{ cook.first_name }} {{ cook.last_name }})</li>
     {% endfor %}
   </ul>
+
 {% endblock %}
