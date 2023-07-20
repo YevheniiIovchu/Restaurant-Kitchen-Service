@@ -30,14 +30,14 @@ class Dish(models.Model):
 
     class Meta:
         ordering = ["name"]
-        verbose_name_plural = ["dishes"]
+        verbose_name_plural = "dishes"
 
     def __str__(self):
         return self.name
 
 
 class Cook(AbstractUser):
-    years_of_experience = models.PositiveIntegerField()
+    years_of_experience = models.PositiveIntegerField(default=0)
 
     class Meta:
         verbose_name = "cook"
