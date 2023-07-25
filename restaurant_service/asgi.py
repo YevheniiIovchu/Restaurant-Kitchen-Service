@@ -1,5 +1,5 @@
 """
-ASGI config for restaurant_service project.
+ASGI restaurant_service for restaurant_service project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
