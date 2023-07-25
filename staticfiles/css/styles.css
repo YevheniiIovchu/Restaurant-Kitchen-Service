@@ -1,0 +1,62 @@
+html {
+  height: 100%;
+}
+.link-style:link {
+    color: black;
+}
+.link-style:visited{
+    color: purple;
+}
+.link-style:hover{
+    color: red;
+    text-decoration: underline;
+}
+.link-update:link:visited{
+    color: royalblue;
+}
+.link-update:hover{
+    color: darkblue;
+    text-decoration: underline;
+}
+.link-delete{
+    color: red;
+}
+.link-delete:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    max-height: 60px;
+}
+.bg-dark {
+    background-color: #212529!important;
+}
+.navbar-expand-lg {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+.nav-name{
+    color: #007bff;
+}
+.table-border{
+    border-radius: 20px;
+    border-collapse: separate;
+    padding-top: 10px;
+}
+.background-box{
+    background: #b9e3e9;
+}
+.filter-position{
+    margin-top: 10vh;
+    margin-left: 5vh;
+}
+.profile-padding{
+    padding-right: 10vh;
+}
+.navbar-brand{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
