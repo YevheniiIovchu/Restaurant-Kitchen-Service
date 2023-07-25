@@ -1,0 +1,49 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a href="{% url 'restaurant:index' %}">
+    <img src="{% static 'images/logo.jpg' %}" alt="My Restaurant Logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'restaurant:index' %}"><span class="nav-name">Home</span> <span class="sr-only">(current)</span></a>
+      </li>
+      <li>
+        <span class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            <span class="nav-name">Main menu</span>
+          </a>
+          <span class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'restaurant:cook-list' %}">Cooks</a>
+            <a class="dropdown-item" href="{% url 'restaurant:dish-list' %}">Dishes</a>
+            <a class="dropdown-item" href="{% url 'restaurant:dish-type-list' %}">Dish types</a>
+          </span>
+        </span>
+      </li>
+    </ul>
+
+    {% if user.is_authenticated %}
+      <span class="nav-item dropdown profile-padding">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          <span class="nav-name">{{ user.username }}</span>
+        </a>
+        <span class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'restaurant:cook-detail' pk=user.id %}">My profile</a>
+          <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+        </span>
+      </span>
+    {% else %}
+      <span class="nav-item dropdown profile-padding">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          <span class="nav-name">Login</span>
+        </a>
+        <span class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+        </span>
+      </span>
+    {% endif %}
+  </div>
+</nav>

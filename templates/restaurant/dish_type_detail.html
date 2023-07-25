@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="text-white text-center font-weight-bold">
+    {{ dish_type.name }}
+    {% if user.is_superuser %}
+      <a href="{% url 'restaurant:dish-type-delete' pk=dish_type.id %}" class="btn btn-danger link-to-page float-right">
+        Delete
+      </a>
+
+      <a href="{% url 'restaurant:dish-type-update' pk=dish_type.id %}" class="btn btn-secondary link-to-page float-right">
+        Update
+      </a>
+    {% endif %}
+  </h1>
+  <br>
+  <h1 class="text-white">
+    Dishes
+  </h1>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="card table-border background-box">
+          <div>
+            <ul>
+              {% for dish in dish_type.dishes.all %}
+                <br>
+                <li>
+                  <a href="{% url "restaurant:dish-detail" pk=dish.id %}" class="link-style">
+                    {{ dish.name }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

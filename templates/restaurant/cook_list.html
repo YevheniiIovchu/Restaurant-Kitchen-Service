@@ -2,38 +2,42 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-    <h1>
-      Cook List
-      <a href="{% url 'restaurant:cook-create' %}" class="btn btn-primary link-to-page">
+  <h1 class="text-center font-weight-bold text-white">
+    Cook List
+    {% if user.is_superuser %}
+      <a href="{% url 'restaurant:cook-create' %}" class="btn btn-primary link-to-page float-right mt-2">
         Create
       </a>
-    </h1>
+  {% endif %}
+</h1>
+<br>
+{% block search %}
+  {% include "includes/search.html" %}
+{% endblock %}
+<br>
+{% if cook_list %}
+<table class="table table-info table-border">
+  <tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Experience(in years)</th>
+  </tr>
+{% for cook in cook_list %}
+  <tr>
+    <td>{{ cook.id }}</td>
+    <td>
+      <a href="{{ cook.get_absolute_url }}" class="link-style">{{ cook.username }} </a>
+    </td>
+    <td>{{ cook.first_name }}</td>
+    <td>{{ cook.last_name }}</td>
+    <td>{{ cook.years_of_experience }}</td>
+  </tr>
+{% endfor %}
 
-  {% block search %}
-    {% include "includes/search.html" %}
-  {% endblock %}
-
-    {% if cook_list %}
-    <table class="table">
-      <tr>
-        <th>ID</th>
-        <th>Username</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Experience(in years)</th>
-      </tr>
-    {% for cook in cook_list %}
-      <tr>
-        <td>{{ cook.id }}</td>
-        <td><a href="{{ cook.get_absolute_url }}">{{ cook.username }} </a></td>
-        <td>{{ cook.first_name }}</td>
-        <td>{{ cook.last_name }}</td>
-        <td>{{ cook.years_of_experience }}</td>
-      </tr>
-    {% endfor %}
-
-    </table>
-    {% else %}
-      <p>There are no cooks in the restaurant.</p>
-    {% endif %}
+</table>
+{% else %}
+  <p>There are no cooks in the restaurant.</p>
+{% endif %}
 {% endblock %}

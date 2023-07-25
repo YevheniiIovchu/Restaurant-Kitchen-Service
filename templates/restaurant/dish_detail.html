@@ -1,29 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>
+  <h1 class="text-white text-center">
     {{ dish.name }}
-    <a href="{% url 'restaurant:dish-delete' pk=dish.id %}" class="btn btn-danger link-to-page">
-      Delete
-    </a>
+    {% if user.is_superuser %}
+      <a href="{% url 'restaurant:dish-delete' pk=dish.id %}" class="btn btn-danger link-to-page float-right">
+        Delete
+      </a>
+    {% endif %}
+    {% if user.is_staff %}
+      <a href="{% url 'restaurant:dish-update' pk=dish.id %}" class="btn btn-secondary link-to-page float-right">
 
-    <a href="{% url 'restaurant:dish-update' pk=dish.id %}" class="btn btn-secondary link-to-page">
-      Update
-    </a>
+        Update
+      </a>
+    {% endif %}
   </h1>
-  <hr>
-  <p><strong>Dish type:</strong> {{ dish.dish_type.name }}</p>
-  <p><strong>Description:</strong> {{ dish.description }}</p>
-  <p><strong>Price:</strong> {{ dish.price }}</p>
-  <hr>
-  <h1>
+  <br>
+  <h3 class="text-white"><strong>Dish type:</strong> {{ dish.dish_type.name }}</h3>
+  <h5 class="text-white ml-4"><strong>Price:</strong> {{ dish.price }}</h5>
+  <h5 class="text-white ml-4"><strong>Description:</strong> {{ dish.description }}</h5>
+  <br>
+  <h1 class="text-white">
     Cooks
   </h1>
-  <ul>
-    {% for cook in dish.cooks.all %}
-      <hr>
-      <li>{{ cook.username }} ({{ cook.first_name }} {{ cook.last_name }})</li>
-    {% endfor %}
-  </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="card table-border background-box">
+          <div>
+            <ul>
+              {% for cook in dish.cooks.all %}
+                <li>
+                  <a href="{% url 'restaurant:cook-detail' pk=cook.id %}" class="link-style">
+                    {{ cook.username }}
+                    <p>({{ cook.first_name }} {{ cook.last_name }})</p>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

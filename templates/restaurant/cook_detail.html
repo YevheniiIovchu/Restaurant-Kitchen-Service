@@ -1,30 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>
+  <h1 class="text-white font-weight-bold">
     Username: {{ cook.username }}
-    <a href="{% url 'restaurant:cook-delete' pk=cook.id %}" class="btn btn-danger link-to-page">
-      Delete
-    </a>
-
+    {% if user.is_superuser %}
+      <a href="{% url 'restaurant:cook-delete' pk=cook.id %}" class="btn btn-danger link-to-page float-right">
+        Delete
+      </a>
+    {% endif %}
   </h1>
 
-  <p><strong>First name:</strong> {{ cook.first_name }}</p>
-  <p><strong>Last name:</strong> {{ cook.last_name }}</p>
-  <p><strong>Experience in years:</strong> {{ cook.years_of_experience }}</p>
-  <p><strong>Is staff:</strong> {{ cook.is_staff }}</p>
+  <h3 class="text-white ml-5"><strong>First name:</strong> {{ cook.first_name }}</h3>
+  <h3 class="text-white ml-5"><strong>Last name:</strong> {{ cook.last_name }}</h3>
+  <h3 class="text-white ml-5"><strong>Experience in years:</strong> {{ cook.years_of_experience }}</h3>
+  <h3 class="text-white ml-5"><strong>Is staff:</strong> {{ cook.is_staff }}</h3>
+  <h3 class="text-white ml-5"><strong>Is super:</strong> {{ cook.is_superuser }}</h3>
+  <br>
 
-  <div class="ml-3">
-    <h4>Dishes</h4>
-
+<div class="mt-3">
+  <h1 class="text-white text-center font-weight-bold">Dishes</h1>
+  <br>
+  <div class="row">
     {% for dish in cook.dishes.all %}
-        <hr>
-        <p><strong>Name:</strong> {{ dish.name }}</p>
-        <p><strong>Dish type:</strong> {{ dish.dish_type.name }}</p>
-        <p class="text-muted"><strong>Id:</strong> {{dish.id}}</p>
-
+      <div class="col-md-3 mb-4">
+        <div class="card table-border background-box">
+          <div class="card-body">
+            <h5 class="card-title">Dish id: {{ dish.id }}</h5>
+            <p class="card-text">
+              <strong>Name:</strong>
+              <a href="{% url 'restaurant:dish-detail' pk=dish.id %}" class="link-style">
+                {{ dish.name }}
+              </a>
+            </p>
+            <p class="card-text">
+              <strong>Dish type:</strong>
+              <a href="{% url 'restaurant:dish-type-detail' pk=dish.dish_type.id %}" class="link-style">
+                {{ dish.dish_type.name }}
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
     {% empty %}
-      <p>No dishes!</p>
+      <h2 class="text-white ml-3">No dishes!</h2>
     {% endfor %}
   </div>
+</div>
 {% endblock %}

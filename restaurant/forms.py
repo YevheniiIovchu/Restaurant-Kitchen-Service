@@ -3,8 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
-from restaurant.models import Dish, Cook
-
+from restaurant.models import Dish, Cook, DishType
 
 MAX_EXPERIENCE = 60
 
@@ -27,18 +26,9 @@ class CookCreationForm(UserCreationForm):
             "years_of_experience",
             "first_name",
             "last_name",
+            "is_staff",
+            "is_superuser",
         )
-
-    def clean_years_of_experience(self):
-        return validate_years_of_experience(
-            self.cleaned_data["years_of_experience"]
-        )
-
-
-class CookExperienceUpdateForm(forms.ModelForm):
-    class Meta:
-        model = Cook
-        fields = ["years_of_experience"]
 
     def clean_years_of_experience(self):
         return validate_years_of_experience(
@@ -63,7 +53,9 @@ class SearchForm(forms.Form):
             max_length=255,
             required=False,
             label="",
-            widget=forms.TextInput(attrs={"placeholder": f"Search by {self.search}..."}),
+            widget=forms.TextInput(
+                attrs={"placeholder": f"Search by {self.search}..."}
+            ),
         )
 
 
@@ -72,9 +64,19 @@ class CookSearchForm(SearchForm):
 
 
 class DishTypeSearchForm(SearchForm):
-
     search = "name"
 
 
 class DishSearchForm(SearchForm):
     search = "name"
+
+
+class DishTypeFilterForm(forms.Form):
+    dish_type = forms.ModelMultipleChoiceField(
+        queryset=DishType.objects.all(),
+        required=False,
+        label="By dish type",
+        widget=forms.CheckboxSelectMultiple(
+            attrs={"class": "form-check-input"}
+        )
+    )

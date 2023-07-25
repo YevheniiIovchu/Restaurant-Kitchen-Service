@@ -2,24 +2,29 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>
+  <h1 class="text-center font-weight-bold text-white">
     Dish Type List
-    <a href="{% url 'restaurant:dish-type-create' %}" class="btn btn-primary link-to-page">
-      Create
-    </a>
+    {% if cook.is_superuser %}
+      <a href="{% url 'restaurant:dish-type-create' %}" class="btn btn-primary link-to-page float-right">
+        Create
+      </a>
+    {% endif %}
   </h1>
+  <br>
 
-  {% block search %}
-    {% include "includes/search.html" %}
-  {% endblock %}
+  {% include "includes/search.html" %}
 
+  <br>
   {% if dish_type_list %}
-    <table class="table">
+    <table class="table table-info table-border">
       <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th>Number of dishes</th>
+        {% if user.is_superuser %}
+          <th>Update</th>
+          <th>Delete</th>
+        {% endif %}
       </tr>
 
       {% for dish_type in dish_type_list %}
@@ -28,19 +33,25 @@
               {{ dish_type.id }}
           </td>
           <td>
+            <a href="{% url 'restaurant:dish-type-detail' pk=dish_type.id %}" class="link-style">
               {{ dish_type.name }}
+            </a>
           </td>
           <td>
-              <a href="{% url 'restaurant:dish-type-update' pk=dish_type.id %}">
+            {{ dish_type.dishes.count }}
+          </td>
+          {% if user.is_superuser %}
+            <td>
+              <a href="{% url 'restaurant:dish-type-update' pk=dish_type.id %}" class="link-update">
                 Update
               </a>
             </td>
             <td>
-              <a style="color: red"
-                href="{% url 'restaurant:dish-type-delete' pk=dish_type.id %}">
+              <a href="{% url 'restaurant:dish-type-delete' pk=dish_type.id %}" class="link-delete">
                 Delete
               </a>
             </td>
+          {% endif %}
         </tr>
       {% endfor %}
     </table>

@@ -1,15 +1,18 @@
-<ul class="sidebar-nav list-group">
-  {% if user.is_authenticated %}
-    <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>
-    <li class="list-group-item"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
-  {% else %}
-    <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-  {% endif %}
-
-  <br>
-
-  <li class="list-group-item"><a href="{% url 'restaurant:index' %}">Home</a></li>
-  <li class="list-group-item"><a href="{% url 'restaurant:cook-list' %}">All cooks</a></li>
-  <li class="list-group-item"><a href="{% url 'restaurant:dish-list' %}">All dishes</a></li>
-  <li class="list-group-item"><a href="{% url 'restaurant:dish-type-list' %}">All dish types</a></li>
-</ul>
+{% load crispy_forms_filters %}
+{% block filter %}
+  <form method="get">
+    <div class="select2-dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter Options
+      </button>
+      <div class="dropdown-menu background-box" aria-labelledby="filterDropdown">
+        <form method="get" class="dropdown-item">
+          <div style="margin-left: 20px;">
+            {{ dish_type_filter_form|crispy }}
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-left: 20px">Apply Filter</button>
+        </form>
+      </div>
+    </div>
+  </form>
+{% endblock %}

@@ -1,57 +1,76 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
-
+{% block filter %}
+  <div class="filter-position">
+    {% include "includes/sidebar.html" %}
+  </div>
+{% endblock %}
 {% block content %}
-  <h1>
-    Dish list
-    <a href="{% url 'restaurant:dish-create' %}" class="btn btn-primary link-to-page">
+  <h1 class="text-center font-weight-bold text-white">
+    Dish List
+  </h1>
+  {% if user.is_superuser %}
+    <a href="{% url 'restaurant:dish-create' %}" class="btn btn-primary link-to-page float-right">
       Create
     </a>
-  </h1>
+   {% endif %}
 
-  {% block search %}
-    {% include "includes/search.html" %}
-  {% endblock %}
+  <br>
 
-  {% if dish_list %}
-    <table class="table">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Dish type</th>
-        <th>Update</th>
-        <th>Delete</th>
-      </tr>
-      {% for dish in dish_list %}
+  {% include 'includes/search.html' %}
+
+  <br>
+
+    {% if dish_list %}
+      <table class="table table-info table-border">
         <tr>
-          <td>
-            <a href="{% url "restaurant:dish-detail" pk=dish.id %} ">{{ dish.id }}</a>
-          </td>
-          <td>
-            {{ dish.name }}
-          </td>
-          <td>
-            {{ dish.price }}
-          </td>
-          <td>
-            {{ dish.dish_type.name }}
-          </td>
-          <td>
-            <a href="{% url 'restaurant:dish-update' pk=dish.id %}">
-              Update
-            </a>
-          </td>
-          <td>
-            <a style="color: red"
-              href="{% url 'restaurant:dish-delete' pk=dish.id %}">
-              Delete
-            </a>
-          </td>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price in USD$</th>
+          <th>Dish type</th>
+          {% if user.is_staff %}
+            <th>Update</th>
+          {% endif %}
+          {% if user.is_superuser %}
+            <th>Delete</th>
+          {% endif %}
         </tr>
-      {% endfor %}
-    </table>
-  {% else %}
-    <p>There are no dishes in restaurant</p>
-  {% endif %}
+        {% for dish in dish_list %}
+          <tr>
+            <td>
+              {{ dish.id }}
+            </td>
+            <td>
+              <a href="{% url "restaurant:dish-detail" pk=dish.id %}" class="link-style">
+                {{ dish.name }}
+              </a>
+            </td>
+            <td>
+              {{ dish.price }}
+            </td>
+            <td>
+              <a href="{% url "restaurant:dish-type-detail" pk=dish.dish_type.id %}" class="link-style">
+                {{ dish.dish_type.name }}
+              </a>
+            </td>
+            {% if user.is_staff %}
+              <td>
+                <a href="{% url 'restaurant:dish-update' pk=dish.id %}" class="link-update">
+                  Update
+                </a>
+              </td>
+            {% endif %}
+            {% if user.is_superuser %}
+              <td>
+                <a href="{% url 'restaurant:dish-delete' pk=dish.id %}" class="link-delete">
+                  Delete
+                </a>
+              </td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>There are no dishes in the restaurant</p>
+    {% endif %}
 {% endblock %}
