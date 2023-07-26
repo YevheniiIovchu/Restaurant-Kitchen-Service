@@ -1,5 +1,11 @@
-html {
-  height: 100%;
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 .link-style:link {
     color: black;
@@ -59,4 +65,13 @@ html {
     width: 30px;
     height: 30px;
     object-fit: contain;
+}
+.error-text{
+    text-align: center;
+    margin-top: 65vh;
+}
+.error-position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
