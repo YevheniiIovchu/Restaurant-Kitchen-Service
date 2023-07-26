@@ -1,1 +1,1342 @@
-[{"model": "restaurant.dishtype", "pk": 1, "fields": {"name": "Main Courses"}}, {"model": "restaurant.dishtype", "pk": 2, "fields": {"name": "Salads"}}, {"model": "restaurant.dishtype", "pk": 3, "fields": {"name": "Appetizers"}}, {"model": "restaurant.dishtype", "pk": 4, "fields": {"name": "Soups"}}, {"model": "restaurant.dishtype", "pk": 5, "fields": {"name": "Pasta"}}, {"model": "restaurant.dishtype", "pk": 6, "fields": {"name": "Pizza"}}, {"model": "restaurant.dishtype", "pk": 7, "fields": {"name": "Sandwiches"}}, {"model": "restaurant.dishtype", "pk": 8, "fields": {"name": "Burgers"}}, {"model": "restaurant.dishtype", "pk": 9, "fields": {"name": "Seafood"}}, {"model": "restaurant.dishtype", "pk": 10, "fields": {"name": "Steaks"}}, {"model": "restaurant.dishtype", "pk": 11, "fields": {"name": "Sushi"}}, {"model": "restaurant.dishtype", "pk": 12, "fields": {"name": "Vegan Dishes"}}, {"model": "restaurant.dishtype", "pk": 13, "fields": {"name": "Noodles"}}, {"model": "restaurant.dishtype", "pk": 14, "fields": {"name": "Desserts"}}, {"model": "restaurant.dishtype", "pk": 15, "fields": {"name": "Breakfast"}}, {"model": "restaurant.dish", "pk": 1, "fields": {"name": "Mozzarella Sticks", "description": "Breaded and fried mozzarella sticks served with marinara sauce for dipping.", "price": "9.99", "dish_type": 3, "cooks": [3, 7, 13]}}, {"model": "restaurant.dish", "pk": 2, "fields": {"name": "Bruschetta", "description": "Toasted bread topped with fresh tomatoes, garlic, basil, and drizzled with balsamic glaze.", "price": "8.99", "dish_type": 3, "cooks": [3, 7, 13]}}, {"model": "restaurant.dish", "pk": 3, "fields": {"name": "Shrimp Cocktail", "description": "Chilled shrimp served with a tangy cocktail sauce, perfect for a refreshing appetizer.", "price": "14.99", "dish_type": 3, "cooks": [3, 7, 13]}}, {"model": "restaurant.dish", "pk": 4, "fields": {"name": "Caesar Salad", "description": "Crisp romaine lettuce, croutons, parmesan cheese, and Caesar dressing.", "price": "11.99", "dish_type": 2, "cooks": [3, 7, 13]}}, {"model": "restaurant.dish", "pk": 5, "fields": {"name": "Greek Salad", "description": "Fresh cucumbers, tomatoes, olives, feta cheese, and Greek dressing.", "price": "13.99", "dish_type": 2, "cooks": [3, 7, 13]}}, {"model": "restaurant.dish", "pk": 6, "fields": {"name": "Caprese Salad", "description": "Sliced tomatoes, fresh mozzarella, basil, and balsamic glaze.", "price": "12.99", "dish_type": 2, "cooks": [3, 7, 13]}}, {"model": "restaurant.dish", "pk": 7, "fields": {"name": "Tomato Basil Soup", "description": "Rich and creamy tomato soup with a hint of basil.", "price": "6.99", "dish_type": 4, "cooks": [37, 18]}}, {"model": "restaurant.dish", "pk": 8, "fields": {"name": "Minestrone Soup", "description": "Hearty vegetable soup with beans and pasta.", "price": "8.99", "dish_type": 4, "cooks": [37, 18]}}, {"model": "restaurant.dish", "pk": 9, "fields": {"name": "Chicken Noodle Soup", "description": "Classic chicken soup with tender noodles and vegetables.", "price": "7.99", "dish_type": 4, "cooks": [37, 18]}}, {"model": "restaurant.dish", "pk": 10, "fields": {"name": "French Onion Soup", "description": "A flavorful broth topped with toasted bread and melted cheese.", "price": "8.99", "dish_type": 4, "cooks": [37, 18]}}, {"model": "restaurant.dish", "pk": 11, "fields": {"name": "Roast Duck", "description": "Slow-roasted duck with a crispy skin and flavorful glaze.", "price": "22.99", "dish_type": 1, "cooks": [8, 26, 41, 23, 16]}}, {"model": "restaurant.dish", "pk": 12, "fields": {"name": "Pan-Seared Salmon", "description": "Salmon fillet seared to a crispy finish and served with lemon butter sauce.", "price": "18.99", "dish_type": 1, "cooks": [8, 26, 41, 23, 16]}}, {"model": "restaurant.dish", "pk": 13, "fields": {"name": "Grilled Chicken Breast", "description": "Juicy and tender grilled chicken served with a side of vegetables and rice.", "price": "16.99", "dish_type": 1, "cooks": [8, 26, 41, 23, 16]}}, {"model": "restaurant.dish", "pk": 14, "fields": {"name": "Lasagna", "description": 
+[
+{
+  "model": "restaurant.dishtype",
+  "pk": 1,
+  "fields": {
+    "name": "Main Courses"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 2,
+  "fields": {
+    "name": "Salads"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 3,
+  "fields": {
+    "name": "Appetizers"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 4,
+  "fields": {
+    "name": "Soups"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 5,
+  "fields": {
+    "name": "Pasta"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 6,
+  "fields": {
+    "name": "Pizza"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 7,
+  "fields": {
+    "name": "Sandwiches"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 8,
+  "fields": {
+    "name": "Burgers"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 9,
+  "fields": {
+    "name": "Seafood"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 10,
+  "fields": {
+    "name": "Steaks"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 11,
+  "fields": {
+    "name": "Sushi"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 12,
+  "fields": {
+    "name": "Vegan Dishes"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 13,
+  "fields": {
+    "name": "Noodles"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 14,
+  "fields": {
+    "name": "Desserts"
+  }
+},
+{
+  "model": "restaurant.dishtype",
+  "pk": 15,
+  "fields": {
+    "name": "Breakfast"
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 1,
+  "fields": {
+    "name": "Mozzarella Sticks",
+    "description": "Breaded and fried mozzarella sticks served with marinara sauce for dipping.",
+    "price": "9.99",
+    "dish_type": 3,
+    "cooks": [
+      3,
+      7,
+      13
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 2,
+  "fields": {
+    "name": "Bruschetta",
+    "description": "Toasted bread topped with fresh tomatoes, garlic, basil, and drizzled with balsamic glaze.",
+    "price": "8.99",
+    "dish_type": 3,
+    "cooks": [
+      3,
+      7,
+      13
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 3,
+  "fields": {
+    "name": "Shrimp Cocktail",
+    "description": "Chilled shrimp served with a tangy cocktail sauce, perfect for a refreshing appetizer.",
+    "price": "14.99",
+    "dish_type": 3,
+    "cooks": [
+      3,
+      7,
+      13
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 4,
+  "fields": {
+    "name": "Caesar Salad",
+    "description": "Crisp romaine lettuce, croutons, parmesan cheese, and Caesar dressing.",
+    "price": "11.99",
+    "dish_type": 2,
+    "cooks": [
+      3,
+      7,
+      13
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 5,
+  "fields": {
+    "name": "Greek Salad",
+    "description": "Fresh cucumbers, tomatoes, olives, feta cheese, and Greek dressing.",
+    "price": "13.99",
+    "dish_type": 2,
+    "cooks": [
+      3,
+      7,
+      13
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 6,
+  "fields": {
+    "name": "Caprese Salad",
+    "description": "Sliced tomatoes, fresh mozzarella, basil, and balsamic glaze.",
+    "price": "12.99",
+    "dish_type": 2,
+    "cooks": [
+      3,
+      7,
+      13
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 7,
+  "fields": {
+    "name": "Tomato Basil Soup",
+    "description": "Rich and creamy tomato soup with a hint of basil.",
+    "price": "6.99",
+    "dish_type": 4,
+    "cooks": [
+      37,
+      18
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 8,
+  "fields": {
+    "name": "Minestrone Soup",
+    "description": "Hearty vegetable soup with beans and pasta.",
+    "price": "8.99",
+    "dish_type": 4,
+    "cooks": [
+      37,
+      18
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 9,
+  "fields": {
+    "name": "Chicken Noodle Soup",
+    "description": "Classic chicken soup with tender noodles and vegetables.",
+    "price": "7.99",
+    "dish_type": 4,
+    "cooks": [
+      37,
+      18
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 10,
+  "fields": {
+    "name": "French Onion Soup",
+    "description": "A flavorful broth topped with toasted bread and melted cheese.",
+    "price": "8.99",
+    "dish_type": 4,
+    "cooks": [
+      37,
+      18
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 11,
+  "fields": {
+    "name": "Roast Duck",
+    "description": "Slow-roasted duck with a crispy skin and flavorful glaze.",
+    "price": "22.99",
+    "dish_type": 1,
+    "cooks": [
+      8,
+      26,
+      41,
+      23,
+      16
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 12,
+  "fields": {
+    "name": "Pan-Seared Salmon",
+    "description": "Salmon fillet seared to a crispy finish and served with lemon butter sauce.",
+    "price": "18.99",
+    "dish_type": 1,
+    "cooks": [
+      8,
+      26,
+      41,
+      23,
+      16
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 13,
+  "fields": {
+    "name": "Grilled Chicken Breast",
+    "description": "Juicy and tender grilled chicken served with a side of vegetables and rice.",
+    "price": "16.99",
+    "dish_type": 1,
+    "cooks": [
+      8,
+      26,
+      41,
+      23,
+      16
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 14,
+  "fields": {
+    "name": "Lasagna",
+    "description": "Layers of pasta, meat sauce, cheese, and béchamel sauce baked to perfection.",
+    "price": "16.99",
+    "dish_type": 5,
+    "cooks": [
+      8,
+      26,
+      41,
+      23,
+      16
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 15,
+  "fields": {
+    "name": "Spaghetti Carbonara",
+    "description": "Spaghetti tossed in a creamy egg and cheese sauce with pancetta or bacon.",
+    "price": "14.99",
+    "dish_type": 5,
+    "cooks": [
+      8,
+      26,
+      41,
+      23,
+      16
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 16,
+  "fields": {
+    "name": "Fettuccine Alfredo",
+    "description": "Fettuccine pasta in a rich and creamy Alfredo sauce.",
+    "price": "13.99",
+    "dish_type": 5,
+    "cooks": [
+      8,
+      26,
+      41,
+      23,
+      16
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 17,
+  "fields": {
+    "name": "Margherita Pizza",
+    "description": "Classic pizza topped with tomato sauce, mozzarella cheese, and fresh basil.",
+    "price": "12.99",
+    "dish_type": 6,
+    "cooks": [
+      21
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 18,
+  "fields": {
+    "name": "Pepperoni Pizza",
+    "description": "A timeless favorite with tomato sauce, mozzarella cheese, and pepperoni slices.",
+    "price": "13.99",
+    "dish_type": 6,
+    "cooks": [
+      21
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 19,
+  "fields": {
+    "name": "Hawaiian Pizza",
+    "description": "Pizza topped with tomato sauce, mozzarella cheese, ham, and pineapple.",
+    "price": "14.99",
+    "dish_type": 6,
+    "cooks": [
+      21
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 20,
+  "fields": {
+    "name": "BBQ Chicken Pizza",
+    "description": "Pizza topped with BBQ sauce, grilled chicken, red onions, and cilantro.",
+    "price": "16.99",
+    "dish_type": 6,
+    "cooks": [
+      21
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 21,
+  "fields": {
+    "name": "Grilled Cheese Sandwich",
+    "description": "Comfort food at its best with melted cheese between buttery slices of bread.",
+    "price": "7.99",
+    "dish_type": 7,
+    "cooks": [
+      20,
+      40,
+      5
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 22,
+  "fields": {
+    "name": "Reuben Sandwich",
+    "description": "Grilled sandwich with corned beef, sauerkraut, Swiss cheese, and Greek dressing.",
+    "price": "9.99",
+    "dish_type": 7,
+    "cooks": [
+      20,
+      40,
+      5
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 23,
+  "fields": {
+    "name": "BLT Sandwich",
+    "description": "A classic sandwich with bacon, lettuce, and tomato on toasted bread.",
+    "price": "8.99",
+    "dish_type": 7,
+    "cooks": [
+      20,
+      40,
+      5
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 24,
+  "fields": {
+    "name": "Classic Cheeseburger",
+    "description": "A juicy beef patty topped with cheese, lettuce, tomato, and pickles.",
+    "price": "10.99",
+    "dish_type": 8,
+    "cooks": [
+      20,
+      40,
+      5
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 25,
+  "fields": {
+    "name": "BBQ Bacon Burger",
+    "description": "Burger smothered in BBQ sauce, topped with bacon and onion rings.",
+    "price": "12.99",
+    "dish_type": 8,
+    "cooks": [
+      20,
+      40,
+      5
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 26,
+  "fields": {
+    "name": "Hawaiian Teriyaki Burger",
+    "description": "Burger with teriyaki sauce, grilled pineapple, lettuce, and mayo.",
+    "price": "12.49",
+    "dish_type": 8,
+    "cooks": [
+      20,
+      40,
+      5
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 27,
+  "fields": {
+    "name": "Bacon Mushroom Swiss Burger",
+    "description": "Beef patty topped with bacon, sautéed mushrooms, and Swiss cheese.",
+    "price": "11.99",
+    "dish_type": 8,
+    "cooks": [
+      20,
+      40,
+      5
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 28,
+  "fields": {
+    "name": "Lobster Tail",
+    "description": "Succulent lobster tail served with melted butter.",
+    "price": "29.99",
+    "dish_type": 9,
+    "cooks": [
+      2,
+      34,
+      30
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 29,
+  "fields": {
+    "name": "Garlic Butter Shrimp",
+    "description": "Shrimp sautéed in garlic butter, served with rice or pasta.",
+    "price": "17.99",
+    "dish_type": 9,
+    "cooks": [
+      2,
+      34,
+      30
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 30,
+  "fields": {
+    "name": "Blackened Red Snapper",
+    "description": "Red snapper seasoned with Cajun spices and seared until blackened.",
+    "price": "19.99",
+    "dish_type": 9,
+    "cooks": [
+      2,
+      34,
+      30
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 31,
+  "fields": {
+    "name": "Grilled Mahi Mahi",
+    "description": "Mahi Mahi fillet seasoned and grilled to bring out its natural flavors.",
+    "price": "18.99",
+    "dish_type": 9,
+    "cooks": [
+      2,
+      34,
+      30
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 32,
+  "fields": {
+    "name": "Seared Scallops",
+    "description": "Scallops seared to perfection, served with a lemon-butter sauce.",
+    "price": "23.99",
+    "dish_type": 9,
+    "cooks": [
+      20,
+      40,
+      5
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 33,
+  "fields": {
+    "name": "Filet Mignon",
+    "description": "Tender and flavorful filet mignon, often considered the king of steaks.",
+    "price": "34.99",
+    "dish_type": 10,
+    "cooks": [
+      8,
+      26,
+      41,
+      23,
+      16
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 34,
+  "fields": {
+    "name": "Ribeye Steak",
+    "description": "A well-marbled and juicy ribeye steak known for its rich flavor.",
+    "price": "29.99",
+    "dish_type": 10,
+    "cooks": [
+      8,
+      26,
+      41,
+      23,
+      16
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 35,
+  "fields": {
+    "name": "New York Strip Steak",
+    "description": "A thick and juicy strip steak with a bold beefy flavor.",
+    "price": "27.99",
+    "dish_type": 10,
+    "cooks": [
+      8,
+      26,
+      41,
+      23,
+      16
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 36,
+  "fields": {
+    "name": "T-Bone Steak",
+    "description": "A combination of tenderloin and New York strip, perfect for meat lovers.",
+    "price": "31.99",
+    "dish_type": 10,
+    "cooks": [
+      8,
+      26,
+      41,
+      23,
+      16
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 37,
+  "fields": {
+    "name": "California Roll",
+    "description": "Sushi roll with imitation crab, avocado, and cucumber.",
+    "price": "8.99",
+    "dish_type": 11,
+    "cooks": [
+      12
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 38,
+  "fields": {
+    "name": "Spicy Tuna Roll",
+    "description": "Sushi roll with spicy tuna and cucumber.",
+    "price": "9.99",
+    "dish_type": 11,
+    "cooks": [
+      12
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 39,
+  "fields": {
+    "name": "Shrimp Tempura Roll",
+    "description": "Sushi roll with tempura shrimp, avocado, and cucumber.",
+    "price": "10.99",
+    "dish_type": 11,
+    "cooks": [
+      12
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 40,
+  "fields": {
+    "name": "Rainbow Roll",
+    "description": "Colorful sushi roll with various fish and avocado on top.",
+    "price": "12.99",
+    "dish_type": 11,
+    "cooks": [
+      12
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 41,
+  "fields": {
+    "name": "New York Cheesecake",
+    "description": "Creamy cheesecake with a graham cracker crust, topped with fruit or sauce.",
+    "price": "6.49",
+    "dish_type": 14,
+    "cooks": [
+      3,
+      7,
+      13
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 42,
+  "fields": {
+    "name": "Tiramisu",
+    "description": "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese.",
+    "price": "6.99",
+    "dish_type": 14,
+    "cooks": [
+      3,
+      7,
+      13
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 43,
+  "fields": {
+    "name": "Crème Brûlée",
+    "description": "Custard topped with a caramelized sugar crust for a delightful contrast of textures.",
+    "price": "8.99",
+    "dish_type": 14,
+    "cooks": [
+      3,
+      7,
+      13
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 44,
+  "fields": {
+    "name": "Chocolate Lava Cake",
+    "description": "Warm chocolate cake with a gooey molten center, served with ice cream.",
+    "price": "7.99",
+    "dish_type": 14,
+    "cooks": [
+      3,
+      7,
+      13
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 45,
+  "fields": {
+    "name": "Pad Thai Noodles",
+    "description": "Stir-fried rice noodles with eggs, tofu, peanuts, and tamarind sauce.",
+    "price": "11.99",
+    "dish_type": 13,
+    "cooks": [
+      2,
+      34,
+      30
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 46,
+  "fields": {
+    "name": "Beef Chow Mein",
+    "description": "Stir-fried noodles with tender beef, vegetables, and savory sauce.",
+    "price": "10.99",
+    "dish_type": 13,
+    "cooks": [
+      2,
+      34,
+      30
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 47,
+  "fields": {
+    "name": "Udon Noodle Soup",
+    "description": "Thick and chewy udon noodles served in a flavorful broth.",
+    "price": "10.49",
+    "dish_type": 13,
+    "cooks": [
+      2,
+      34,
+      30
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 48,
+  "fields": {
+    "name": "Vegan Buddha Bowl",
+    "description": "Wholesome bowl with a mix of grains, vegetables, and plant-based protein.",
+    "price": "11.99",
+    "dish_type": 12,
+    "cooks": [
+      6,
+      22
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 49,
+  "fields": {
+    "name": "Vegan Pad Thai",
+    "description": "Classic Thai noodle dish made with tofu and a flavorful sauce.",
+    "price": "10.99",
+    "dish_type": 12,
+    "cooks": [
+      6,
+      22
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 50,
+  "fields": {
+    "name": "Vegan Chickpea Curry",
+    "description": "Hearty curry made with chickpeas, vegetables, and aromatic spices.",
+    "price": "12.99",
+    "dish_type": 12,
+    "cooks": [
+      6,
+      22
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 51,
+  "fields": {
+    "name": "Lentil Shepherd's Pie",
+    "description": "Vegan version of the classic shepherd's pie with lentils and mashed potatoes.",
+    "price": "9.99",
+    "dish_type": 12,
+    "cooks": [
+      6,
+      22
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 52,
+  "fields": {
+    "name": "Eggs Benedict",
+    "description": "Poached eggs served on English muffins with Canadian bacon and hollandaise sauce.",
+    "price": "9.99",
+    "dish_type": 15,
+    "cooks": [
+      6,
+      22
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 53,
+  "fields": {
+    "name": "Pancakes with Maple Syrup",
+    "description": "Fluffy pancakes served with sweet maple syrup.",
+    "price": "6.99",
+    "dish_type": 14,
+    "cooks": [
+      6,
+      22
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 54,
+  "fields": {
+    "name": "French Toast",
+    "description": "Slices of bread soaked in a mixture of eggs and milk, then cooked until golden.",
+    "price": "8.49",
+    "dish_type": 15,
+    "cooks": [
+      6,
+      22
+    ]
+  }
+},
+{
+  "model": "restaurant.dish",
+  "pk": 55,
+  "fields": {
+    "name": "Belgian Waffles",
+    "description": "Thick and crispy waffles served with a variety of toppings.",
+    "price": "7.99",
+    "dish_type": 15,
+    "cooks": [
+      6,
+      22
+    ]
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$320000$b7SUjyL0Wv4bcoaDwRKW11$xvH8AUh2Os/6ftepauLlR1zb88yC92VJzglA2FNepM8=",
+    "last_login": "2023-07-26T18:07:52.698Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_active": true,
+    "date_joined": "2023-07-20T12:47:51.661Z",
+    "years_of_experience": 0,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$b3thSRbLIWCSo4YY2yd7IV$ui9w0lyJkjooKySi1ZzFoaAILcwHt6EApsx8aak2jqs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "jacob.brown",
+    "first_name": "Jacob",
+    "last_name": "Brown",
+    "email": "steventaylor@example.com",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:24Z",
+    "years_of_experience": 3,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$ZmFOIS3wH8wMDU8sZDrkMR$Hg9T+M3Nws4Lj9a4fx9NIt8/Sai1eEFfgdF38Xx5XPs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "alexis.barrera",
+    "first_name": "Alexis",
+    "last_name": "Barrera",
+    "email": "fturner@example.com",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:24Z",
+    "years_of_experience": 5,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$RWfYk2mKgEELQu146Ku8pn$pD7Cv1177DUMGQ4E2vgDTyP+/m9Bi43oxpHiHoFBnmY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "carrie.sloan",
+    "first_name": "Carrie",
+    "last_name": "Sloan",
+    "email": "chamberszachary@example.net",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:24Z",
+    "years_of_experience": 0,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$DR68EPFEVgfB2TRWw0KE9l$yaanUjysXAqOSJGZf6Gxlscuh+If+aaBYy5kXXAHoSY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "kathleen.smith",
+    "first_name": "Kathleen",
+    "last_name": "Smith",
+    "email": "tinastewart@example.org",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:25Z",
+    "years_of_experience": 3,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$XUvd6VP2xIaBlgINZRbifE$G3chU83h64RUCcGHGg8/Nt/id/EH+E+QtzNM3cdm208=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "amber.black",
+    "first_name": "Amber",
+    "last_name": "Black",
+    "email": "carolyn45@example.com",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:25Z",
+    "years_of_experience": 2,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$fOiYGIZggqIXuRRRfIHoUt$D/wUKUnMA6PIMwzFZ8+7bAoEH9DCP+46a5PEj/dmsxM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "blake.hernandez",
+    "first_name": "Blake",
+    "last_name": "Hernandez",
+    "email": "patrick32@example.net",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:25Z",
+    "years_of_experience": 9,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$Um2REbsvDORzKPcyfZs8Q1$rC6CQIUfode/AlKSCwglwpFSWzfCsx0V6Du3OoUdEMs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "jorge.bonilla",
+    "first_name": "Jorge",
+    "last_name": "Bonilla",
+    "email": "amyrichardson@example.com",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:26Z",
+    "years_of_experience": 13,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$danzNGCEP3NKxWKp014ApL$WpF3nQ+J0NRotc0XuglNpbNvT7jq5kk56UV1z+kv6EY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "andrea.jackson",
+    "first_name": "Andrea",
+    "last_name": "Jackson",
+    "email": "benjaminhenderson@example.org",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:26Z",
+    "years_of_experience": 6,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$9uVNrJKDwoeMuFS0a8oR8m$o3fcpNG5Nyhx5K+T3NCirdnNw3HDYb48HBiPZQJLnIk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "brittany.anderson",
+    "first_name": "Brittany",
+    "last_name": "Anderson",
+    "email": "markcross@example.com",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:26Z",
+    "years_of_experience": 7,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 18,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$OSxtsYgF4ecGknQ1okYNIY$C4Fnw4AR797Y1UjRvNWG5Wrf3+b7XAAFav7H3xFrVec=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "elizabeth.brown",
+    "first_name": "Elizabeth",
+    "last_name": "Brown",
+    "email": "vazquezkenneth@example.net",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:27Z",
+    "years_of_experience": 15,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 20,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$8JhLHzSIPE0vQ3lqrJvNSp$af/+ooLvC9spugVbANfmp17idoeutFHdHZUsmFVY7uk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "caitlyn.melton",
+    "first_name": "Caitlyn",
+    "last_name": "Melton",
+    "email": "vmoss@example.org",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:27Z",
+    "years_of_experience": 5,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 21,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$9mYJsmyGvCNFgpVf7yr76W$jTjvUW7AcyPovlFuXp5h8Dhr5vWcu9ady9W/I/+WpQs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "christopher.murray",
+    "first_name": "Christopher",
+    "last_name": "Murray",
+    "email": "bburton@example.com",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:27Z",
+    "years_of_experience": 2,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 22,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$xkBithNOkzlddLQCtEbusj$68Z3UoUFAtNxmevePrHhkB/UHMWbWE5FFROxjSzlcKA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "kayla.johnson",
+    "first_name": "Kayla",
+    "last_name": "Johnson",
+    "email": "curtiskhan@example.net",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:27Z",
+    "years_of_experience": 9,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 23,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$SBlTrkFRZgdmSEd0MLDP5k$gkmcQnZ1FHtC9bXxYElErAFOvDrTyquzWbIZD2GNDu8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "brian.perez",
+    "first_name": "Brian",
+    "last_name": "Perez",
+    "email": "deannarobinson@example.com",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:27Z",
+    "years_of_experience": 3,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 26,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$3pyg1jsjWUgvVOs7R9kLzC$22gQtnH60Jh4rDp8jvVSHc8/wkLpdyFpgVwuRhkE0p4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "brandon.jones",
+    "first_name": "Brandon",
+    "last_name": "Jones",
+    "email": "gtyler@example.org",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:28Z",
+    "years_of_experience": 19,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 30,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$BFDVsRkyuewUhAJyuPFD1F$HOk5jHh2kzAahPY85pbAJyje9i4ErxoZk0ym/KKGgqc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "jennifer.hardy",
+    "first_name": "Jennifer",
+    "last_name": "Hardy",
+    "email": "christopher34@example.com",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:28Z",
+    "years_of_experience": 14,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 34,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$B5prxTfQSmhr72GXP8nPGa$hk/H5nKPTZ75aH5cQ2x9iEN6wimAoAejOx42yrUjY8U=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "james.freeman",
+    "first_name": "James",
+    "last_name": "Freeman",
+    "email": "priscillawalker@example.net",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:29Z",
+    "years_of_experience": 12,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 37,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$vSqO736g1Iz7ogJuqpEKjU$kc9VXoQJGWveqfb9qIjocNRhWD6UoaNe/cJ+aRRD1Tc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "eduardo.baker",
+    "first_name": "Eduardo",
+    "last_name": "Baker",
+    "email": "qflores@example.org",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:29Z",
+    "years_of_experience": 1,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 40,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$hqON2SYIZ4yqMW2rBlPj37$ffiOtNKr81sYZZ/ykLkZl2Djr8KwBQkaNvRLFKhGQpY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "cameron.miller",
+    "first_name": "Cameron",
+    "last_name": "Miller",
+    "email": "bishopkevin@example.com",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:30Z",
+    "years_of_experience": 16,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 41,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$QuQsGNWyV26kT3qV7D8V3O$yawuRK4mAHtzRHF1MGIHJXb3VpnvN4SI1CoQsx4ZbvY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "brian.dean",
+    "first_name": "Brian",
+    "last_name": "Dean",
+    "email": "brendaolsen@example.org",
+    "is_active": true,
+    "date_joined": "2023-07-20T17:42:30Z",
+    "years_of_experience": 17,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "restaurant.cook",
+  "pk": 43,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$Nnw5CnM1TA5kZZmzK35L1n$qEbgo7mvp47ODK1WgZVKx1/ssj2vsCj4MhOjxqA3EiM=",
+    "last_login": "2023-07-25T15:37:41.151Z",
+    "is_superuser": false,
+    "username": "new_cook",
+    "first_name": "Jonny",
+    "last_name": "Bonny",
+    "email": "",
+    "is_active": true,
+    "date_joined": "2023-07-22T16:59:27Z",
+    "years_of_experience": 3,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

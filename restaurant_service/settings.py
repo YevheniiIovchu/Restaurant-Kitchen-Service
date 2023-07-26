@@ -78,18 +78,6 @@ DATABASES = {
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES["default"].update(db_from_env)
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'mytrxpxp',
-#         'USER': 'mytrxpxp',
-#         'PASSWORD': '7-I__uom6-_P75Kx6ZCq85nV4h0zmNHW',
-#         'HOST': 'snuffleupagus.db.elephantsql.com',
-#         'PORT': '5432',
-#     },
-#     # Other database configurations...
-# }
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
