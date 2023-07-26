@@ -4,7 +4,7 @@ Django project for managing cooks, dishes and dish types in a restaurant
 
 ## Check it out!
 
-[Restaurant service project deployed to Haroku](https://restaurant-service-hiyj.onrender.com/)
+[Restaurant service project deployed to Render](https://restaurant-service-hiyj.onrender.com/)
 
 ## Installing / Getting started
 Python3 must be already installed
