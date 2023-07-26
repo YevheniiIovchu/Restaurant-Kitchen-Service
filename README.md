@@ -16,7 +16,7 @@ python -m venv venv
 venv\Scripts\activate (on Windows)
 source venv/bin/activate (on macOS)
 pip install -r requirements.txt
-python manage.py loaddata restaurant_service_db_data.json
+python manage.py loaddata data.json  # it can take ~minute
 python manage.py makemigrations db
 python manage.py migrate
 python manage.py runserver
